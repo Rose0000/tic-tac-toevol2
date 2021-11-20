@@ -1,0 +1,89 @@
+class Test {
+    static void Enter(int input) {
+        if (input == 10){
+            Environment.Exit(0);
+        }
+    }
+
+    static void MojaFunkcjaDoKrokX(char[] fields)
+    {
+        Console.Write("X's move to > ");
+        int input;
+
+        while (true)
+        {
+            input = Convert.ToInt32(Console.ReadLine());
+            Enter(input);
+            if (input >= 1 && input <= 9 && fields[input-1] == ' ')
+            {
+                fields[input - 1] = 'X';
+                break;
+            }
+
+            Console.WriteLine("Illegal move ");
+            Console.Write("X's move to  ");
+        }
+        Console.WriteLine($" {fields[0]} | {fields[1]} | {fields[2]}  \n---+---+--- \n {fields[3]} | {fields[4]} | {fields[5]}\n---+---+--- \n {fields[6]} | {fields[7]} | {fields[8]} \n");
+
+
+    }
+
+    static void MojaFunkcjaDoKrokO(char[] fields)
+    {
+        Console.Write("O's move to > ");
+        int input;
+        while (true)
+        {
+            input = Convert.ToInt32(Console.ReadLine());
+            Enter(input);
+            if (input >= 1 && input <= 9 && fields[input-1] == ' ')
+            {
+                fields[input - 1] = 'O';
+                break;
+            }
+
+            Console.WriteLine("Illegal move ");
+            Console.Write("O's move to  ");
+        }
+        Console.WriteLine($" {fields[0]} | {fields[1]} | {fields[2]}  \n---+---+--- \n {fields[3]} | {fields[4]} | {fields[5]}\n---+---+--- \n {fields[6]} | {fields[7]} | {fields[8]} \n");
+
+
+    }
+
+    static void Main(string[] args)
+    {
+
+        int a, b, c, d, e, f, g, h, i;
+        char[] fields = new char[9];
+
+        for (int x = 0; x < 9; x++)
+        {
+            fields[x] = ' ';
+        }
+
+        Console.WriteLine("Welcome to tic-tac-toe! :)\n");
+        Console.WriteLine("If u want to enter the game please press 10.\nEmpty columns are numbered 1 through 9, from left to right. You are choosing column by writing a number.\nEnjoy!\n");
+        Console.WriteLine($" 1 | 2 | 3\n --+---+--- \n 4 | 5 | 6\n --+---+--- \n 7 | 8 | 9\n");
+
+
+        MojaFunkcjaDoKrokX(fields);
+
+        MojaFunkcjaDoKrokO(fields);
+
+        MojaFunkcjaDoKrokX(fields);
+
+        MojaFunkcjaDoKrokO(fields);
+
+        MojaFunkcjaDoKrokX(fields);
+
+        MojaFunkcjaDoKrokO(fields);
+
+        MojaFunkcjaDoKrokX(fields);
+
+        MojaFunkcjaDoKrokO(fields);
+
+        MojaFunkcjaDoKrokX(fields);
+
+
+    }
+}
